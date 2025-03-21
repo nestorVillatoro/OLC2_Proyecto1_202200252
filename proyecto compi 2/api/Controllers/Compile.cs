@@ -6,9 +6,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using analyzer;
 using Antlr4.Runtime;
+using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Text;
+using System.Text.Json;
+
 
 namespace api.Controllers
 {
@@ -20,17 +24,6 @@ namespace api.Controllers
         public Compile(ILogger<Compile> logger)
         {
             _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
         }
 
         public class CompileRequest
@@ -50,21 +43,95 @@ namespace api.Controllers
 
             var inputStream = new AntlrInputStream(request.code);
             var lexer = new LanguageLexer(inputStream);
+
+            // Add custom error listener
+            lexer.RemoveErrorListeners();
+            lexer.AddErrorListener(new LexicalErrorListener());
+
             var tokens = new CommonTokenStream(lexer);
             var parser = new LanguageParser(tokens);
 
-            var tree = parser.program(); //primer regla
+            parser.RemoveErrorListeners();
+            parser.AddErrorListener(new SyntaxErrorListener());
 
-            var visitor = new CompilerVisitor();
-            visitor.Visit(tree);
+            try
+            {
+                var tree = parser.program();
 
-            return Ok(new { result = visitor.output }); //mostramos resultado
+                var visitor = new CompilerVisitor();
+                visitor.Visit(tree);
 
-            //var walker = new ParseTreeWalker();
-            //var lister = new CompilerListerner();
-            //walker.Walk(lister, tree);
+                return Ok(new { result = visitor.output });
 
-            //return Ok(new { result = lister.GetResult() });
+            }
+            catch (ParseCanceledException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+            catch (SemanticError ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+            catch (ContinueException)
+            {
+                return BadRequest(new { error = "Continue statement outside loop" });
+            }
+        }
+
+        [HttpPost("ast")]
+        public async Task<IActionResult>GetAst([FromBody] CompileRequest request){
+            if(!ModelState.IsValid){
+                return BadRequest(new { error = "Invalid request" });
+            }
+
+            string grammarPath = Path.Combine(Directory.GetCurrentDirectory(), "Language.g4");
+            var grammar = "";
+
+            try{
+                if(System.IO.File.Exists(grammarPath)){
+                    grammar = await System.IO.File.ReadAllTextAsync(grammarPath);
+                }else{
+                    return BadRequest(new { error = "Grammar file not found" });
+                }
+            }catch(System.Exception){
+                return BadRequest(new { error = "Error reading grammar file" });
+            }
+
+            var payload = new{
+                grammar, 
+                lexgrammar = "",
+                input = request.code,
+                start = "program"
+            };
+
+            var jsonPaylod = JsonSerializer.Serialize(payload);
+            var context = new StringContent(jsonPaylod, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient()){
+                try
+                {
+                    HttpResponseMessage response = await client.PostAsync("http://lab.antlr.org/parse/", context);
+                    response.EnsureSuccessStatusCode();
+                    string result = await response.Content.ReadAsStringAsync();
+
+                    using var doc = JsonDocument.Parse(result);
+                    var root = doc.RootElement;
+                    
+                    if(root.TryGetProperty("result", out JsonElement resultElement) && 
+                        resultElement.TryGetProperty("svgtree", out JsonElement svgtreeElement))
+                        {
+                            string svgtree = svgtreeElement.GetString() ?? string.Empty;
+                            return Content(svgtree, "image/svg+xml");
+                        }
+                        return BadRequest(new { error = "svgtree not found in response" });
+                }
+                catch (System.Exception)
+                {
+                    return BadRequest(new { error = "Error parsing code" });
+                }
+            }
+                
+            
         }
 
     }
