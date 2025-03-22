@@ -48,10 +48,18 @@ public class LanguageClass : Invocable
             var name = prop.Key;
             var value = prop.Value;
 
-            if(value.expr() != null){
-                var varValue= visitor.Visit(value.expr());
+            if (value is LanguageParser.EVarDclContext explicitVar && explicitVar.expr() != null)
+            {
+                var varValue = visitor.Visit(explicitVar.expr());
                 newInstance.Set(name, varValue);
-            }else{
+            }
+            else if (value is LanguageParser.IVarDclContext inferredVar)
+            {
+                var varValue = visitor.Visit(inferredVar.expr());
+                newInstance.Set(name, varValue);
+            }
+            else
+            {
                 newInstance.Set(name, visitor.defaultVoid);
             }
         }

@@ -45,11 +45,19 @@ public interface ILanguageVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitDcl([NotNull] LanguageParser.DclContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="LanguageParser.varDcl"/>.
+	/// Visit a parse tree produced by the <c>EVarDcl</c>
+	/// labeled alternative in <see cref="LanguageParser.varDcl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitVarDcl([NotNull] LanguageParser.VarDclContext context);
+	Result VisitEVarDcl([NotNull] LanguageParser.EVarDclContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>IVarDcl</c>
+	/// labeled alternative in <see cref="LanguageParser.varDcl"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIVarDcl([NotNull] LanguageParser.IVarDclContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="LanguageParser.funcDcl"/>.
 	/// </summary>
@@ -179,6 +187,13 @@ public interface ILanguageVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitRelational([NotNull] LanguageParser.RelationalContext context);
 	/// <summary>
+	/// Visit a parse tree produced by the <c>Logical</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogical([NotNull] LanguageParser.LogicalContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>String</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
@@ -221,6 +236,13 @@ public interface ILanguageVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAssign([NotNull] LanguageParser.AssignContext context);
 	/// <summary>
+	/// Visit a parse tree produced by the <c>NotExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNotExpr([NotNull] LanguageParser.NotExprContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>Negate</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
@@ -241,6 +263,13 @@ public interface ILanguageVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitBoolean([NotNull] LanguageParser.BooleanContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>AddSubAssign</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAddSubAssign([NotNull] LanguageParser.AddSubAssignContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>FuncCall</c>
 	/// labeled alternative in <see cref="LanguageParser.call"/>.

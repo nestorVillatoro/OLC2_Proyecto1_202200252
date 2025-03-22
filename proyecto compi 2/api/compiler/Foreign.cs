@@ -27,7 +27,7 @@ public class ForeignFunction : Invocable
         if(context.@params() != null){
             for (int i = 0; i<context.@params().ID().Length; i++)
             {
-                newEnv.Declare(context.@params().ID(i).GetText(), args[i], null);
+                newEnv.Declare(context.@params().ID(i).GetText(), args[i], null, null);
             }
         }
         try {
@@ -45,7 +45,7 @@ public class ForeignFunction : Invocable
 
     public ForeignFunction Bind(Instance instance){
         var hiddenEnv = new Environment(clousure);   
-        hiddenEnv.Declare("this", new InstanceValue(instance), null);
+        hiddenEnv.Declare("this", new InstanceValue(instance), null, null);
         return new ForeignFunction(hiddenEnv, context);
         }
 }

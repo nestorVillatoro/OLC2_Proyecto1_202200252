@@ -1,7 +1,7 @@
 using analyzer;
 public class LanguageArray : Invocable {
-    public Dictionary<string, LanguageParser.VarDclContext> Props {get;}
     public Dictionary<string, ForeignFunction> Methods {get; set;}
+    public Dictionary<string, LanguageParser.VarDclContext> Props {get;}
     private LanguageClass equivalentClass;
     public LanguageArray(){
         Props = new Dictionary<string, LanguageParser.VarDclContext>();
@@ -9,12 +9,10 @@ public class LanguageArray : Invocable {
         equivalentClass = new LanguageClass("[]", Props, Methods);
         
     }
-    public int Arity()
-    {
+    public int Arity(){
         return 100;
     }
-    public ValueWrapper Invoke(List<ValueWrapper> args, CompilerVisitor visitor)
-    {
+    public ValueWrapper Invoke(List<ValueWrapper> args, CompilerVisitor visitor){
         var newInstance = new Instance(equivalentClass, instance =>{
             var output = "[";
             foreach(var prop in instance.Properties){
@@ -26,7 +24,6 @@ public class LanguageArray : Invocable {
             output += "]";
             return output;
         });
-
         for(int i = 0; i < args.Count; i++){
             var name = i.ToString();
             var value = args[i];
@@ -34,9 +31,5 @@ public class LanguageArray : Invocable {
             newInstance.Set(name, value);
         }
         return new InstanceValue(newInstance);
-
-
-
-
     } 
 }

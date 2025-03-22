@@ -5,8 +5,10 @@ public abstract record ValueWrapper;
 
 public record IntValue(int Value) : ValueWrapper
 {
+    
     public override string ToString()
     {
+
         return Value.ToString();
     }
 }
@@ -14,7 +16,7 @@ public record FloatValue(float Value) : ValueWrapper
 {
     public override string ToString()
     {
-        return Value.ToString();
+        return Value.ToString("F16");
     }
 }
 public record StringValue(string Value) : ValueWrapper
@@ -25,6 +27,14 @@ public record StringValue(string Value) : ValueWrapper
     }
 }
 public record BoolValue(bool Value) : ValueWrapper
+{
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
+}
+
+public record RuneValue(bool Value) : ValueWrapper
 {
     public override string ToString()
     {
@@ -65,19 +75,3 @@ public record VoidValue : ValueWrapper
     }
 }
 
-
-// public class ValueWp
-// {
-
-//     public enum ValueType
-//     {
-//         Int,
-//         Float,
-//         String,
-//         Bool,
-//         Void
-//     }
-
-//     public ValueType Type { get; }
-//     public object Value { get; }
-// }
