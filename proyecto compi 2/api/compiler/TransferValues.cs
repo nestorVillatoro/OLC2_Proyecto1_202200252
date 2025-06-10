@@ -1,6 +1,3 @@
-
-
-// BreakException
 public class BreakException : Exception
 {
     public BreakException() : base("Break statement")
@@ -8,7 +5,6 @@ public class BreakException : Exception
     }
 }
 
-// ContinueException
 public class ContinueException : Exception
 {
     public ContinueException() : base("Continue statement")
@@ -16,7 +12,6 @@ public class ContinueException : Exception
     }
 }
 
-// ReturnException
 public class ReturnException : Exception
 {
     public ValueWrapper Value { get; }

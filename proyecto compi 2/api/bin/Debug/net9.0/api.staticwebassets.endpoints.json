@@ -1,5 +1,304 @@
 {
   "Version": 1,
   "ManifestType": "Build",
-  "Endpoints": []
+  "Endpoints": [
+    {
+      "Route": "tabla_simbolos.96kr5wh1ei.html",
+      "AssetFile": "tabla_simbolos.html.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.004784688995"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "208"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0yVbjTzFYP4n3MCW8SNJsClje/099317q75BT5Biw98=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 22:22:10 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "96kr5wh1ei"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s="
+        },
+        {
+          "Name": "label",
+          "Value": "tabla_simbolos.html"
+        }
+      ]
+    },
+    {
+      "Route": "tabla_simbolos.96kr5wh1ei.html",
+      "AssetFile": "tabla_simbolos.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "815"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 22:22:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "96kr5wh1ei"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s="
+        },
+        {
+          "Name": "label",
+          "Value": "tabla_simbolos.html"
+        }
+      ]
+    },
+    {
+      "Route": "tabla_simbolos.96kr5wh1ei.html.gz",
+      "AssetFile": "tabla_simbolos.html.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "208"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0yVbjTzFYP4n3MCW8SNJsClje/099317q75BT5Biw98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 22:22:10 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "96kr5wh1ei"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0yVbjTzFYP4n3MCW8SNJsClje/099317q75BT5Biw98="
+        },
+        {
+          "Name": "label",
+          "Value": "tabla_simbolos.html.gz"
+        }
+      ]
+    },
+    {
+      "Route": "tabla_simbolos.html",
+      "AssetFile": "tabla_simbolos.html.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.004784688995"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "208"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0yVbjTzFYP4n3MCW8SNJsClje/099317q75BT5Biw98=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 22:22:10 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s="
+        }
+      ]
+    },
+    {
+      "Route": "tabla_simbolos.html",
+      "AssetFile": "tabla_simbolos.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "815"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 22:22:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s="
+        }
+      ]
+    },
+    {
+      "Route": "tabla_simbolos.html.gz",
+      "AssetFile": "tabla_simbolos.html.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "208"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0yVbjTzFYP4n3MCW8SNJsClje/099317q75BT5Biw98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 22:22:10 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0yVbjTzFYP4n3MCW8SNJsClje/099317q75BT5Biw98="
+        }
+      ]
+    }
+  ]
 }

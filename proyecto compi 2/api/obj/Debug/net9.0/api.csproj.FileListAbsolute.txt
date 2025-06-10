@@ -67,3 +67,5 @@
 /home/nestorvillatoro/Documentos/OLC2_Proyecto1_202200252/proyecto compi 2/api/obj/Debug/net9.0/api.pdb
 /home/nestorvillatoro/Documentos/OLC2_Proyecto1_202200252/proyecto compi 2/api/obj/Debug/net9.0/api.genruntimeconfig.cache
 /home/nestorvillatoro/Documentos/OLC2_Proyecto1_202200252/proyecto compi 2/api/obj/Debug/net9.0/ref/api.dll
+/home/nestorvillatoro/Documentos/OLC2_Proyecto1_202200252/proyecto compi 2/api/bin/Debug/net9.0/api.staticwebassets.runtime.json
+/home/nestorvillatoro/Documentos/OLC2_Proyecto1_202200252/proyecto compi 2/api/obj/Debug/net9.0/compressed/l5d1wzp6aa-96kr5wh1ei.gz

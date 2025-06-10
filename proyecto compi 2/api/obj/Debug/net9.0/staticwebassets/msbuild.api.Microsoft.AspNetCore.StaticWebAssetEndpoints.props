@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/api/tabla_simbolos.96kr5wh1ei.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tabla_simbolos.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"96kr5wh1ei"},{"Name":"integrity","Value":"sha256-H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s="},{"Name":"label","Value":"_content/api/tabla_simbolos.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"815"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 22:22:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/api/tabla_simbolos.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tabla_simbolos.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"815"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022H2wjnW5nGyjpkDaBVJG9ruvY3xyXEfKxasSk7WWwa6s=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 22:22:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

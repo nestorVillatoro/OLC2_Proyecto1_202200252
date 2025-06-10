@@ -47,12 +47,44 @@ export default function Home() {
             value={code}
             onChange={(value) => setCode(value || '')}
           />
+
           <button
             className='mt-4 w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded'
             onClick={handleExecute}
           >
             Ejecutar
           </button>
+
+          <a
+            href={`http://localhost:5030/tabla_simbolos.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className='mt-2 block text-center w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'
+          >
+            Ver Tabla de Símbolos
+          </a>
+
+          <label className="mt-2 block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center cursor-pointer">
+            Cargar archivo .glt
+            <input
+              type="file"
+              accept=".glt"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                  const content = event.target?.result;
+                  if (typeof content === 'string') {
+                    setCode(content);
+                  }
+                };
+                reader.readAsText(file);
+              }}
+              className="hidden"
+            />
+          </label>
         </div>
 
         {/* Resultados */}

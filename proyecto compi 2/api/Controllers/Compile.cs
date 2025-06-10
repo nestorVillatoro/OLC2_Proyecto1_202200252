@@ -72,7 +72,7 @@ namespace api.Controllers
             }
         }
 
-        [HttpPost("ast")]
+       [HttpPost("ast")]
         public async Task<IActionResult>GetAst([FromBody] CompileRequest request){
             if(!ModelState.IsValid){
                 return BadRequest(new { error = "Invalid request" });

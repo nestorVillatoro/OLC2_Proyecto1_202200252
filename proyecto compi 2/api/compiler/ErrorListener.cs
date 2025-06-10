@@ -14,12 +14,20 @@ public class SemanticError : Exception
     }
 
     public override string Message
+{
+    get
     {
-        get
+        if (token != null)
         {
-            return message + " en línea " + token.Line + ", columna " + token.Column;
+            return $"{message} en línea {token.Line}, columna {token.Column}";
+        }
+        else
+        {
+            return message;
         }
     }
+}
+
 }
 
 
